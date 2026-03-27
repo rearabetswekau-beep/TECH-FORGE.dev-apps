@@ -1,0 +1,82 @@
+TechForgeApp-beta/
+├── app/
+│   ├── build.gradle.kts
+│   └── src/
+│       └── main/
+│           ├── AndroidManifest.xml
+│           ├── java/
+│           │   └── com/
+│           │       └── techforge/
+│           │           └── app/
+│           │               └── MainActivity.kt
+│           └── res/
+│               ├── layout/
+│               │   └── activity_main.xml
+│               └── values/
+│                   ├── colors.xml
+│                   ├── strings.xml
+│                   └── themes.xml
+└── settings.gradle.kts     (optional but recommended)plugins {
+    id("com.android.application")
+    kotlin("android")
+}
+
+android {
+    namespace = "com.techforge.app"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.techforge.app"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+        }
+    }
+}
+
+dependencies {
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.11.0")
+}package com.techforge.app
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="TECH FORGE"
+        android:textSize="28sp"
+        android:textColor="@color/purple"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:text="Build. Innovate. Create."
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout><resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.TechForge" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple</item>
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
+</resources>
